@@ -67,6 +67,31 @@
         components: {
             Header,
             Card,
+        },
+
+        data() {
+            return {
+                cards: [
+                    {
+                        id: 0,
+                        img: 'coffee-1.jpg',
+                        text: '',
+                        price: '',
+                    },
+                    {
+                        id: 1,
+                        img: 'coffee-2.jpg',
+                        text: '',
+                        price: '',
+                    },
+                    {
+                        id: 2,
+                        img: 'coffee-3.jpg',
+                        text: '',
+                        price: '',
+                    },
+                ]
+            }
         }
     }
 </script>
