@@ -29,7 +29,12 @@
                                     </label>
                                 </div>
                                 <div class="col col-12 col-sm-9">
-                                    <input type="text" class="form-control" id="name-input">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="name-input"
+                                        v-model="form.name"
+                                    >
                                 </div>
                             </div>
     
@@ -41,7 +46,12 @@
                                     </label>
                                 </div>
                                 <div class="col col-12 col-sm-9">
-                                    <input type="email" class="form-control" id="email-input">
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="email-input"
+                                        v-model="form.email"
+                                    >
                                 </div>
                             </div>
     
@@ -52,7 +62,12 @@
                                     </label>
                                 </div>
                                 <div class="col col-12 col-sm-9">
-                                    <input type="tel" class="form-control" id="phone-input">
+                                    <input
+                                        type="tel"
+                                        class="form-control"
+                                        id="phone-input"
+                                        v-model="form.phone"
+                                    >
                                 </div>
                             </div>
     
@@ -64,14 +79,26 @@
                                     </label>
                                 </div>
                                 <div class="col col-12">
-                                    <textarea class="form-control" name="message" id="message" rows="5"
-                                        placeholder="Leave your comments here"></textarea>
+                                    <textarea
+                                        class="form-control"
+                                        name="message"
+                                        id="message"
+                                        rows="5"
+                                        placeholder="Leave your comments here"
+                                        v-model="form.text"
+                                    >
+                                    </textarea>
                                 </div>
                             </div>
     
                             <div class="row">
                                 <div class="col">
-                                    <button class="btn btn-outline-dark send-btn">Send us</button>
+                                    <button
+                                        class="btn btn-outline-dark send-btn"
+                                        @click.prevent="sendForm"
+                                    >
+                                        Send us
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -98,8 +125,20 @@
                     {
                         text: 'Contact us',
                     }
-                ]
+                ],
+
+                form: {
+                    name: '',
+                    email: '',
+                    phone: '',
+                    text: '',
+                },
             }
+        },
+        methods: {
+            sendForm() {
+                console.log(this.form);
+            },
         }
     }
 </script>
