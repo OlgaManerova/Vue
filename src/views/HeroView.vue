@@ -16,7 +16,13 @@
                         <img class="beanslogo" src="@/assets/logo/Beans_logo.svg" alt="Beans logo">
                         <div class="preview__subtitle">We makes every day full of energy and taste</div>
                         <div class="preview__subtitle">Want to try our beans?</div>
-                        <a href="./coffeepage.html" class="preview__btn">More</a>
+                        <a
+                            href="./coffeepage.html"
+                            class="preview__btn"
+                            @click.prevent="smoothScroll"
+                        >
+                            More
+                        </a>
                     </div>
                 </div>
             </div>
@@ -45,7 +51,7 @@
                 </div>
             </div>
         </section>
-        <section class="best">
+        <section class="best" ref="best">
             <div class="container">
                 <div class="title">Our best</div>
                 <div class="row">
@@ -68,46 +74,64 @@
 </template>
 
 <script>
-    import Header from '@/components/Header';
-    import Card from '@/components/Card';
-    import Heading from '@/components/Heading';
+import Header from '@/components/Header';
+import Card from '@/components/Card';
+import Heading from '@/components/Heading';
 
-    export default {
-        components: {
-            Header,
-            Card,
-            Heading,
-        },
+import { polyfill } from "seamless-scroll-polyfill";
 
-        data() {
-            return {
-                bestSellers: [
-                    {
-                        id: 0,
-                        src: 'coffee-1.jpg',
-                        text: 'Карточка 1',
-                        price: 100,
-                    },
-                    {
-                        id: 1,
-                        src: 'coffee-2.jpg',
-                        text: 'Карточка 2',
-                        price: 200,
-                    },
-                    {
-                        id: 2,
-                        src: 'coffee-3.jpg',
-                        text: 'Карточка 3',
-                        price: 300,
-                    },
-                ],
+export default {
+    components: {
+        Header,
+        Card,
+        Heading,
+    },
 
-                title: [
-                    {
-                        text: 'Everything You Love About Coffee',
-                    }
-                ]
-            }
+    data() {
+        return {
+            bestSellers: [
+                {
+                    id: 0,
+                    src: 'coffee-1.jpg',
+                    text: 'Карточка 1',
+                    price: 100,
+                },
+                {
+                    id: 1,
+                    src: 'coffee-2.jpg',
+                    text: 'Карточка 2',
+                    price: 200,
+                },
+                {
+                    id: 2,
+                    src: 'coffee-3.jpg',
+                    text: 'Карточка 3',
+                    price: 300,
+                },
+            ],
+
+            title: [
+                {
+                    text: 'Everything You Love About Coffee',
+                }
+            ]
         }
-    }
+    },
+    methods: {
+        smoothScroll() {
+            this.$refs.best.scrollIntoView({
+                block: 'start',
+                behavior: 'smooth',
+            })
+
+            // scrollIntoView(this.$refs.best, {
+            //     behavior: "smooth", 
+            //     block: "start", 
+            // });
+
+            //https://www.npmjs.com/package/seamless-scroll-polyfill
+            //скролл для макбуков и айфонов
+        }
+    },
+}
 </script>
