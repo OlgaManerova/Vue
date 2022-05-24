@@ -59,40 +59,12 @@
                     <div class="col-lg-10 offset-lg-1">
                         <div class="shop__wrapper">
                             <Card
+                                v-for="cofe in cofee"
+                                :key="cofe.id"
                                 classItem="shop__item"
-                                :name="cofee[0].text"
-                                :price="cofee[0].price"
-                                :image="cofee[0].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="cofee[1].text"
-                                :price="cofee[1].price"
-                                :image="cofee[1].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="cofee[2].text"
-                                :price="cofee[2].price"
-                                :image="cofee[2].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="cofee[3].text"
-                                :price="cofee[3].price"
-                                :image="cofee[3].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="cofee[4].text"
-                                :price="cofee[4].price"
-                                :image="cofee[4].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="cofee[5].text"
-                                :price="cofee[5].price"
-                                :image="cofee[5].src"
+                                :name="cofe.text"
+                                :price="cofe.price"
+                                :image="cofe.src"
                             />
                         </div>
                     </div>

@@ -4,26 +4,20 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <ul class="footer d-flex flex-wrap">
-                        <li class=" footer__item">
-                            <router-link to="/">
-                                <img :src="require(`@/assets/logo/${links[0].icon}`)" :alt="links[0].icon">
-                            </router-link>
-                        </li>
+                        <Link
+                            classItem="footer__item"
+                            :link="links.header.link"
+                            :text="links.header.text"
+                        >
+                            <img :src="require(`@/assets/logo/${links.header.icon}`)" :alt="links.header.icon">
+                        </Link>
 
                         <Link
+                            v-for="link in links.other"
+                            :key="link.id"
                             classItem="footer__item"
-                            :link="links[1].link"
-                            :text="links[1].text"
-                        />
-                        <Link
-                            classItem="footer__item"
-                            :link="links[2].link"
-                            :text="links[2].text"
-                        />
-                        <Link
-                            classItem="footer__item"
-                            :link="links[3].link"
-                            :text="links[3].text"
+                            :link="link.link"
+                            :text="link.text"
                         />
                     </ul>
                 </div>
@@ -43,12 +37,13 @@ import Link from '@/components/Link';
 
         data() {
             return {
-                links: [
-                    {
+                links: {
+                    header: {
                         id: 0,
                         link: '/',
                         icon: 'Logo_black.svg',
                     },
+                    other: [
                     {
                         id: 1,
                         text: 'Our coffee',
@@ -65,6 +60,7 @@ import Link from '@/components/Link';
                         link: '/contacts',
                     },
                 ]
+                }
             }
         }
     }
