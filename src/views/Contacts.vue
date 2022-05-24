@@ -7,7 +7,10 @@
                         <Header></Header>
                     </div>
                 </div>
-                <h1 class="title-big">Contact us</h1>
+                <Heading
+                    classItem="title-big"
+                    :text="title[0].text"
+                />
             </div>
         </div>
         <section class="contacts">
@@ -81,10 +84,22 @@
 
 <script>
     import Header from '@/components/Header';
+    import Heading from '@/components/Heading';
 
     export default {
         components: {
             Header,
+            Heading,
+        },
+
+        data() {
+            return {
+                title: [
+                    {
+                        text: 'Contact us',
+                    }
+                ]
+            }
         }
     }
 </script>
