@@ -41,36 +41,13 @@
                     <div class="col-lg-10 offset-lg-1">
                         <div class="shop__wrapper">
                             <Card
+                                v-for="good in goods"
+                                :key="good.id"
                                 classItem="shop__item"
-                                :name="goods[0].text"
-                                :price="goods[0].price"
-                                :image="goods[0].src"
+                                :name="good.text"
+                                :price="good.price"
+                                :image="good.src"
                             />
-                            <Card
-                                classItem="shop__item"
-                                :name="goods[1].text"
-                                :price="goods[1].price"
-                                :image="goods[1].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="goods[2].text"
-                                :price="goods[2].price"
-                                :image="goods[2].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="goods[3].text"
-                                :price="goods[3].price"
-                                :image="goods[3].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="goods[4].text"
-                                :price="goods[4].price"
-                                :image="goods[4].src"
-                            />
-
                         </div>
                     </div>
                 </div>

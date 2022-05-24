@@ -52,22 +52,12 @@
                     <div class="col-lg-10 offset-lg-1">
                         <div class="best__wrapper">
                             <Card
+                                v-for="bestSeller in bestSellers"
+                                :key="bestSeller.id"
                                 classItem="best__item"
-                                :name="bestSellers[0].text"
-                                :price="bestSellers[0].price"
-                                :image="bestSellers[0].src"
-                            />
-                            <Card
-                                classItem="best__item"
-                                :name="bestSellers[1].text"
-                                :price="bestSellers[1].price"
-                                :image="bestSellers[1].src"
-                            />
-                            <Card
-                                classItem="best__item"
-                                :name="bestSellers[2].text"
-                                :price="bestSellers[2].price"
-                                :image="bestSellers[2].src"
+                                :name="bestSeller.text"
+                                :price="bestSeller.price"
+                                :image="bestSeller.src"
                             />
                         </div>
                     </div>

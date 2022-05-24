@@ -1,26 +1,20 @@
 <template>
     <header>
         <ul class="header d-flex justify-content-center justify-content-md-start flex-wrap">
-            <li class="header__item">
-                <router-link :to="links[0].link">
-                    <img :src="require(`@/assets/logo/${links[0].icon}`)" :alt="links[0].icon">
-                </router-link>
-            </li>
+            <Link
+                classItem="header__item"
+                :link="links.header.link"
+                :text="links.header.text"
+            >
+                <img :src="require(`@/assets/logo/${links.header.icon}`)" :alt="links.header.icon">
+            </Link>
 
             <Link
+                v-for="link in links.other"
+                :key="link.id"
                 classItem="header__item"
-                :link="links[1].link"
-                :text="links[1].text"
-            />
-            <Link
-                classItem="header__item"
-                :link="links[2].link"
-                :text="links[2].text"
-            />
-            <Link
-                classItem="header__item"
-                :link="links[3].link"
-                :text="links[3].text"
+                :link="link.link"
+                :text="link.text"
             />
         </ul>
     </header>
@@ -36,12 +30,13 @@ import Link from '@/components/Link';
 
         data() {
             return {
-                links: [
-                    {
+                links: {
+                    header: {
                         id: 0,
                         link: '/',
                         icon: 'Logo.svg',
                     },
+                    other: [
                     {
                         id: 1,
                         text: 'Our coffee',
@@ -58,6 +53,7 @@ import Link from '@/components/Link';
                         link: '/contacts',
                     },
                 ]
+                }
             }
         }
     }
