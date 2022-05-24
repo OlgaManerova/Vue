@@ -74,21 +74,21 @@
                 cards: [
                     {
                         id: 0,
-                        img: 'coffee-1.jpg',
-                        text: '',
-                        price: '',
+                        src: 'coffee-1.jpg',
+                        text: 'Карточка 1',
+                        price: '100',
                     },
                     {
                         id: 1,
-                        img: 'coffee-2.jpg',
-                        text: '',
-                        price: '',
+                        src: 'coffee-2.jpg',
+                        text: 'Карточка 2',
+                        price: '200',
                     },
                     {
                         id: 2,
-                        img: 'coffee-3.jpg',
-                        text: '',
-                        price: '',
+                        src: 'coffee-3.jpg',
+                        text: 'Карточка 3',
+                        price: '300',
                     },
                 ]
             }
