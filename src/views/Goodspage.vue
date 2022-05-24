@@ -7,11 +7,7 @@
                         <Header></Header>
                     </div>
                 </div>
-
-                <Heading
-                    classItem="title-big"
-                    :text="title[0].text"
-                />
+                <h1 class="title-big">For your pleasure</h1>
             </div>
         </div>
         <section class="shop">
@@ -34,43 +30,17 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="line"></div>
-
+    
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="shop__wrapper">
-                            <Card
-                                classItem="shop__item"
-                                :name="goods[0].text"
-                                :price="goods[0].price"
-                                :image="goods[0].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="goods[1].text"
-                                :price="goods[1].price"
-                                :image="goods[1].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="goods[2].text"
-                                :price="goods[2].price"
-                                :image="goods[2].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="goods[3].text"
-                                :price="goods[3].price"
-                                :image="goods[3].src"
-                            />
-                            <Card
-                                classItem="shop__item"
-                                :name="goods[4].text"
-                                :price="goods[4].price"
-                                :image="goods[4].src"
-                            />
-
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
                         </div>
                     </div>
                 </div>
@@ -83,60 +53,52 @@
 <script>
     import Header from '@/components/Header';
     import Card from '@/components/Card';
-    import Heading from '@/components/Heading';
 
     export default {
         components: {
             Header,
             Card,
-            Heading,
         },
 
         data() {
             return {
-                goods: [
+                cards: [
                     {
                         id: 0,
                         src: 'coffee-1.jpg',
                         text: 'Карточка 1',
-                        price: 100,
+                        price: '100',
                     },
                     {
                         id: 1,
                         src: 'coffee-2.jpg',
                         text: 'Карточка 2',
-                        price: 200,
+                        price: '200',
                     },
                     {
                         id: 2,
                         src: 'coffee-3.jpg',
                         text: 'Карточка 3',
-                        price: 300,
+                        price: '300',
                     },
                     {
                         id: 3,
                         src: 'coffee-1.jpg',
                         text: 'Карточка 4',
-                        price: 400,
+                        price: '400',
                     },
                     {
                         id: 4,
                         src: 'coffee-2.jpg',
                         text: 'Карточка 5',
-                        price: 500,
+                        price: '500',
                     },
                     {
                         id: 5,
                         src: 'coffee-3.jpg',
                         text: 'Карточка 6',
-                        price: 600,
+                        price: '600',
                     },
-                ],
-
-                title: [
-                    {
-                        text: 'For your pleasure',
-                    }
                 ]
             }
         }
