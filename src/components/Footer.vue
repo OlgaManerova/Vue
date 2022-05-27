@@ -6,10 +6,10 @@
                     <ul class="footer d-flex flex-wrap">
                         <Link
                             classItem="footer__item"
-                            :link="links.header.link"
-                            :text="links.header.text"
+                            :link="links.footer.link"
+                            :text="links.footer.text"
                         >
-                            <img :src="require(`@/assets/logo/${links.header.icon}`)" :alt="links.header.icon">
+                            <img :src="require(`@/assets/logo/${links.footer.icon}`)" :alt="links.footer.icon">
                         </Link>
 
                         <Link
@@ -35,33 +35,39 @@ import Link from '@/components/Link';
             Link,
         },
 
-        data() {
-            return {
-                links: {
-                    header: {
-                        id: 0,
-                        link: '/',
-                        icon: 'Logo_black.svg',
-                    },
-                    other: [
-                    {
-                        id: 1,
-                        text: 'Our coffee',
-                        link: '/our-coffee',
-                    },
-                    {
-                        id: 2,
-                        text: 'For your pleasure',
-                        link: '/goodspage',
-                    },
-                    {
-                        id: 3,
-                        text: 'Contact us',
-                        link: '/contacts',
-                    },
-                ]
-                }
+        computed: {
+            links() {
+                return this.$store.getters['getFooterLinks'];
             }
         }
+
+        // data() {
+        //     return {
+        //         links: {
+        //             footer: {
+        //                 id: 0,
+        //                 link: '/',
+        //                 icon: 'Logo_black.svg',
+        //             },
+        //             other: [
+        //             {
+        //                 id: 1,
+        //                 text: 'Our coffee',
+        //                 link: '/our-coffee',
+        //             },
+        //             {
+        //                 id: 2,
+        //                 text: 'For your pleasure',
+        //                 link: '/goodspage',
+        //             },
+        //             {
+        //                 id: 3,
+        //                 text: 'Contact us',
+        //                 link: '/contacts',
+        //             },
+        //         ]
+        //         }
+        //     }
+        // }
     }
 </script>

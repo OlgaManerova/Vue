@@ -69,6 +69,12 @@
             Heading,
         },
 
+        computed: {
+            goods() {
+                return this.$store.getters['getGoods'];
+            }
+        },
+
         data() {
             return {
                 goods: [
