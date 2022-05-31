@@ -1,6 +1,6 @@
-const goods = {
+const cofee = {
     state: {
-        goods: [
+        cofee: [
             {
                 id: 0,
                 src: 'coffee-1.jpg',
@@ -10,7 +10,7 @@ const goods = {
             {
                 id: 1,
                 src: 'coffee-2.jpg',
-                text: 'Карточка 2',
+                text: 'Карточка 222',
                 price: 200,
             },
             {
@@ -22,7 +22,7 @@ const goods = {
             {
                 id: 3,
                 src: 'coffee-1.jpg',
-                text: 'Карточка 4',
+                text: 'Карточка 444',
                 price: 400,
             },
             {
@@ -39,11 +39,12 @@ const goods = {
             },
         ],
     },
+
     getters: {
-        getGoods(state) {
-            return state.goods;
+        getCofee(state) {
+            return state.cofee;
         }
     }
 }
 
-export default goods;
+export default cofee;
